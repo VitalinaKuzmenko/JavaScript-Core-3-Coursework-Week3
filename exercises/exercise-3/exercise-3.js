@@ -6,3 +6,29 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPrice: 1.0 },
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
+
+function printReceipt(items) {
+  let total = 0;
+  console.log("QTY  ITEM      TOTAL");
+  items.forEach((item) => {
+    console.log(
+      `${item.quantity}   ${item.itemName}   ${Number(item.unitPrice).toFixed(
+        2
+      )}`
+    );
+    total += item.unitPrice;
+  });
+
+  console.log(`Total: ${total}`);
+}
+
+printReceipt(order);
+// QTY     ITEM                TOTAL
+// 1       Hot Cakes           2.29
+// 2       Apple Pie           2.78
+// 1       Egg McMuffin        2.80
+// 1       Sausage McMuffin    3.00
+// 2       Hot Coffee          2.00
+// 4       Hash Brown          1.60
+
+// Total: 14.47
